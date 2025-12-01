@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장교조 재정 관리</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 스킵 링크 (접근성) -->
+    <a href="#main-content" class="skip-link">본문으로 바로가기</a>
+
+    <div class="app-container">
+        <!-- 헤더 -->
+        <header class="header" role="banner">
+            <h1 class="header-title">
+                <span class="header-icon" aria-hidden="true">₩</span>
+                장교조 재정
+            </h1>
+            <div class="header-search">
+                <label for="global-search" class="sr-only">검색</label>
+                <input
+                    type="search"
+                    id="global-search"
+                    class="search-input"
+                    placeholder="검색 (Ctrl+K)"
+                    aria-label="재정 항목 검색"
+                >
+            </div>
+            <div class="header-info">
+                <span id="last-update" aria-live="polite"></span>
+            </div>
+        </header>
+
+        <div class="main-wrapper">
+            <!-- 네비게이션 -->
+            <nav class="nav" role="navigation" aria-label="메인 메뉴">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#dashboard" class="nav-item active" data-view="dashboard" data-shortcut="1">
+                            <span class="nav-icon" aria-hidden="true">📊</span>
+                            <span class="nav-text">대시보드</span>
+                            <span class="nav-shortcut" aria-hidden="true">1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#monthly" class="nav-item" data-view="monthly" data-shortcut="2">
+                            <span class="nav-icon" aria-hidden="true">📅</span>
+                            <span class="nav-text">월별 보고서</span>
+                            <span class="nav-shortcut" aria-hidden="true">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#budget" class="nav-item" data-view="budget" data-shortcut="3">
+                            <span class="nav-icon" aria-hidden="true">📈</span>
+                            <span class="nav-text">예산 비교</span>
+                            <span class="nav-shortcut" aria-hidden="true">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#trends" class="nav-item" data-view="trends" data-shortcut="4">
+                            <span class="nav-icon" aria-hidden="true">📉</span>
+                            <span class="nav-text">추이 차트</span>
+                            <span class="nav-shortcut" aria-hidden="true">4</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#planner" class="nav-item" data-view="planner" data-shortcut="5">
+                            <span class="nav-icon" aria-hidden="true">✏️</span>
+                            <span class="nav-text">예산안 편성</span>
+                            <span class="nav-shortcut" aria-hidden="true">5</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 메인 콘텐츠 -->
+            <main id="main-content" class="main" role="main" tabindex="-1">
+                <!-- 대시보드 뷰 -->
+                <section id="view-dashboard" class="view active" aria-labelledby="dashboard-title">
+                    <h2 id="dashboard-title" class="view-title">대시보드</h2>
+                    <div id="dashboard-content" class="view-content">
+                        <!-- dashboard.js에서 렌더링 -->
+                    </div>
+                </section>
+
+                <!-- 월별 보고서 뷰 -->
+                <section id="view-monthly" class="view" aria-labelledby="monthly-title" hidden>
+                    <h2 id="monthly-title" class="view-title">월별 보고서</h2>
+                    <div id="monthly-content" class="view-content">
+                        <!-- monthly.js에서 렌더링 -->
+                    </div>
+                </section>
+
+                <!-- 예산 비교 뷰 -->
+                <section id="view-budget" class="view" aria-labelledby="budget-title" hidden>
+                    <h2 id="budget-title" class="view-title">예산 vs 실적 비교</h2>
+                    <div id="budget-content" class="view-content">
+                        <!-- budget.js에서 렌더링 -->
+                    </div>
+                </section>
+
+                <!-- 추이 차트 뷰 -->
+                <section id="view-trends" class="view" aria-labelledby="trends-title" hidden>
+                    <h2 id="trends-title" class="view-title">수입/지출 추이</h2>
+                    <div id="trends-content" class="view-content">
+                        <!-- trends.js에서 렌더링 -->
+                    </div>
+                </section>
+
+                <!-- 예산안 편성 뷰 -->
+                <section id="view-planner" class="view" aria-labelledby="planner-title" hidden>
+                    <h2 id="planner-title" class="view-title">예산안 편성</h2>
+                    <div id="planner-content" class="view-content">
+                        <!-- planner.js에서 렌더링 -->
+                    </div>
+                </section>
+
+                <!-- 검색 결과 뷰 -->
+                <section id="view-search" class="view" aria-labelledby="search-title" hidden>
+                    <h2 id="search-title" class="view-title">검색 결과</h2>
+                    <div id="search-content" class="view-content">
+                        <!-- search.js에서 렌더링 -->
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- 키보드 단축키 안내 (모달) -->
+    <div id="shortcuts-modal" class="modal" role="dialog" aria-labelledby="shortcuts-title" aria-modal="true" hidden>
+        <div class="modal-content">
+            <h3 id="shortcuts-title">키보드 단축키</h3>
+            <button class="modal-close" aria-label="닫기">&times;</button>
+            <table class="shortcuts-table">
+                <thead>
+                    <tr>
+                        <th scope="col">단축키</th>
+                        <th scope="col">기능</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><kbd>1</kbd></td><td>대시보드</td></tr>
+                    <tr><td><kbd>2</kbd></td><td>월별 보고서</td></tr>
+                    <tr><td><kbd>3</kbd></td><td>예산 비교</td></tr>
+                    <tr><td><kbd>4</kbd></td><td>추이 차트</td></tr>
+                    <tr><td><kbd>5</kbd></td><td>예산안 편성</td></tr>
+                    <tr><td><kbd>Ctrl+K</kbd></td><td>검색창 포커스</td></tr>
+                    <tr><td><kbd>Ctrl+S</kbd></td><td>예산안 저장</td></tr>
+                    <tr><td><kbd>?</kbd></td><td>단축키 안내</td></tr>
+                    <tr><td><kbd>Esc</kbd></td><td>닫기</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 스크립트 -->
+    <script src="js/utils/format.js?v=2"></script>
+    <script src="js/utils/keyboard.js?v=2"></script>
+    <script src="js/views/dashboard.js?v=2"></script>
+    <script src="js/views/monthly.js?v=2"></script>
+    <script src="js/views/budget.js?v=2"></script>
+    <script src="js/views/trends.js?v=2"></script>
+    <script src="js/views/search.js?v=2"></script>
+    <script src="js/views/planner.js?v=2"></script>
+    <script src="js/app.js?v=2"></script>
+</body>
+</html>
