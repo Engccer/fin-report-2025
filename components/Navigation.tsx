@@ -35,7 +35,7 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-colors"
+                  className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:text-gray-900 hover:border-gray-300 transition-colors"
                 >
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
@@ -47,7 +47,7 @@ export function Navigation() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -71,7 +71,7 @@ export function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+              className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
               onClick={() => setIsOpen(false)}
             >
               <div className="flex items-center">

@@ -28,7 +28,7 @@ export default async function Dashboard() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">재정 대시보드</h1>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-800">
           함께하는장애인교원노동조합의 현재 재정 상태를 한눈에 확인하세요.
         </p>
       </div>

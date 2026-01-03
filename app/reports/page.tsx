@@ -12,7 +12,7 @@ export default async function ReportsPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">월별 재정 보고서</h1>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-800">
           월별 상세 수입 및 지출 내역을 확인하세요.
         </p>
       </div>

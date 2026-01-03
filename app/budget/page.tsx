@@ -40,7 +40,7 @@ export default async function BudgetPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">예산 및 결산</h1>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-800">
           2025년 예산안 및 결산 내역입니다.
         </p>
       </div>

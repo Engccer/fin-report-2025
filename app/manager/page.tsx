@@ -187,7 +187,7 @@ export default function ManagerPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900">재정 관리 (Transaction Manager)</h1>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-2 text-sm text-gray-800">
           은행 거래 내역을 업로드하고 AI를 통해 자동으로 분류하세요.
         </p>
       </div>
@@ -200,8 +200,8 @@ export default function ManagerPage() {
         }`}
       >
         <input {...getInputProps()} aria-label="파일 업로드" />
-        <Upload className="mx-auto h-12 w-12 text-gray-400" />
-        <p className="mt-2 text-sm text-gray-600">
+        <Upload className="mx-auto h-12 w-12 text-gray-600" />
+        <p className="mt-2 text-sm text-gray-800">
           CSV 또는 Excel 파일을 여기로 드래그하거나 클릭하여 업로드하세요.
         </p>
       </div>
