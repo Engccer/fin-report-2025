@@ -1,6 +1,5 @@
 {
-  "outputDirectory": "app",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
-  ]
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "installCommand": "npm install"
 }
